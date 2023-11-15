@@ -2,10 +2,9 @@ export async function obtenerChatRespuesta(consultaAlChat) {
   // const api_key = process.env.REACT_APP_OpenAIApiKey;
 
   // const api_key = process.env.REACT_APP_API_KEY; //AQUI VA LA API_KEY
-  const api_key = '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'
+  const api_key = '';
   
-  console.log(api_key);
-
+  
   const url = "https://api.openai.com/v1/chat/completions";
   
   try {
@@ -25,7 +24,7 @@ export async function obtenerChatRespuesta(consultaAlChat) {
           { role: "user", content: consultaAlChat },
         ],
         temperature: 0.7,
-        max_tokens: 50, // Ajusta este número según las necesidades de tu aplicación
+        max_tokens: 150, // Ajusta este número según las necesidades de tu aplicación
       }),
     });
 
