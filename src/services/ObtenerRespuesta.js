@@ -25,7 +25,7 @@ export async function obtenerChatRespuesta(consultaAlChat) {
           { role: "user", content: consultaAlChat },
         ],
         temperature: 0.7,
-        max_tokens: 50, // Ajusta este número según las necesidades de tu aplicación
+        max_tokens: 150, // Ajusta este número según las necesidades de tu aplicación
       }),
     });
 
