@@ -10,7 +10,7 @@ const TablaUsuarios = () => {
   const bloquearUsuario = async (idusuario) => {
     const data = {
       idusuario: idusuario,
-      estado: '0'
+      estado: "0",
     };
 
     try {
@@ -45,7 +45,7 @@ const TablaUsuarios = () => {
   const habilitarUsuario = async (idusuario) => {
     const data = {
       idusuario: idusuario,
-      estado: '1'
+      estado: "1",
     };
 
     try {
@@ -142,18 +142,22 @@ const TablaUsuarios = () => {
                     </td>
                     <td>
                       <div className="d-flex justify-content-center ">
-                        <button
-                          className="btn btn-primary btn-sm ms-2 btn-bloquear"
-                          onClick={() => habilitarUsuario(user.idusuario)}
-                        >
-                          <i className="fa-solid fa-lock-open"></i>
-                        </button>
-                        <button
-                          className="btn btn-danger btn-sm ms-2 btn-bloquear"
-                          onClick={() => bloquearUsuario(user.idusuario)}
-                        >
-                          <i className="fa-solid fa-lock"></i>
-                        </button>
+                        {user.estado == 1 ? (
+                          <button
+                            className="btn btn-danger btn-sm ms-2 btn-bloquear"
+                            onClick={() => bloquearUsuario(user.idusuario)}
+                          >
+                            <i className="fa-solid fa-lock"></i>
+                          </button>
+                        ) : (
+                          <button
+                            className="btn btn-primary btn-sm ms-2 btn-bloquear"
+                            onClick={() => habilitarUsuario(user.idusuario)}
+                          >
+                            <i className="fa-solid fa-lock-open"></i>
+                          </button>
+                          
+                        )}
                       </div>
                     </td>
                   </tr>
